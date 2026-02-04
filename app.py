@@ -1,5 +1,16 @@
 import streamlit as st
 import pandas as pd
+
+# 기존의 긴 전체 경로 대신, 파일 이름만 적어줍니다.
+# GitHub 저장소에 파일이 함께 있기 때문에 이렇게만 적어도 인식이 됩니다.
+file_path = 'netflix_titles.csv'
+
+try:
+    df = pd.read_csv(file_path)
+    # 이후 데이터 처리 코드...
+except Exception as e:
+    st.error(f"❌ 에러가 발생했습니다: {e}")
+
 import plotly.express as px
 
 # 1. 페이지 설정
